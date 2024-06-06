@@ -6,7 +6,6 @@ import { toast } from 'react-hot-toast';
 const sourceMap = {
   userName: 'Nazwa użytkownika',
   email: 'Email',
-  phone: 'Numer telefonu',
 };
 
 const detailMap = {

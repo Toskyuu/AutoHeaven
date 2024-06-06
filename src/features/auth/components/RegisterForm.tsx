@@ -13,7 +13,6 @@ import { apiClient } from "../../../lib/api-client.ts";
 interface IFormInput {
   email: string;
   userName: string;
-  phone: string;
   password: string;
   confirmPassword: string;
 }
@@ -22,10 +21,6 @@ const schema = yup
   .object({
     userName: yup.string().required(),
     email: yup.string().email('Musi być poprawnym emailem').required('Email jest wymagany'),
-    phone: yup
-      .string()
-      .required('Numer telefonu jest wymagany')
-      .matches(/^\+48\d{9}$/, 'Niepoprawny numer telefonu'),
     password: yup
       .string()
       .min(6, 'Hasło musi mieć co najmniej 6 znaków')
@@ -75,13 +70,6 @@ export const RegisterForm = () => {
       <Controller
         render={({ field }) => <TextInput label="Email" {...field} error={errors.email?.message} />}
         name="email"
-        control={control}
-      />
-      <Controller
-        render={({ field }) => (
-          <TextInput label="Numer telefonu" {...field} error={errors.phone?.message} />
-        )}
-        name="phone"
         control={control}
       />
       <Controller

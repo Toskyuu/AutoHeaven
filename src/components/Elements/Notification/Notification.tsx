@@ -28,7 +28,7 @@ export const Notification = ({ type, message, onDelete }: NotificationProps) => 
 const ToastContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: lightblue;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   min-width: 30rem;
@@ -61,14 +61,14 @@ const IconContainer = styled.div<{ type: NotificationType['type'] }>`
 `;
 
 const Content = styled.p`
-  color: ${({ theme }) => theme.colors.text.themeDark};
+  color: ${({ theme }) => theme.colors.text.dark};
   font-size: 1rem;
   flex-grow: 1;
 `;
 
 const DeleteButton = styled(FontAwesomeIcon)`
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.text.themeDark};
+  color: ${({ theme }) => theme.colors.text.dark};
   font-size: 1rem;
   padding: 0.5rem;
   align-self: flex-start;

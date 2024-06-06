@@ -8,7 +8,7 @@ const LandingPage = () => {
   const loginInfo = useMemo(() => {
     if (token) {
       return (<>
-        Jesteś zalogowany!
+              <span>Jesteś zalogowany!</span>
           </>
       );
     }
